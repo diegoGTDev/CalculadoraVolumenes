@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,43 +8,67 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.cdnfonts.com/css/segoe-ui-variable-static-display" rel="stylesheet">
+                
+                
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div>
+      <slot />
+    </div>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    /*background: #13151a; */
+    /* background-image: url('../public/background.jpg'); */
+    background-color: #13151a;
+    background-color: white;
+    opacity: 1;
+    background-image: linear-gradient(
+        #f3f3f3 1.9000000000000001px,
+        transparent 1.9000000000000001px
+      ),
+      linear-gradient(
+        to right,
+        #f3f3f3 1.9000000000000001px,
+        #13151a 1.9000000000000001px
+      );
+    background-size: 80px 80px;
+    
+    color: #ffffff;
+    
+  }
+  body {
+
+  }
+  main {
+    font-family: 'Segoe UI Variable Static Display', sans-serif;
+                                                                    font-family: 'Segoe UI Variable Static Small', sans-serif;
+                                                                    font-family: 'Segoe UI Variable Static Text', sans-serif;
+                                                
+    font-weight: bold;         
+    backdrop-filter: blur(3px);
+  }
+  h3 > span{
+    color: #ff5858;
+  }
 </style>
